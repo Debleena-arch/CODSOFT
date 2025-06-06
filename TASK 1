@@ -1,0 +1,37 @@
+def chatbot():
+    print("Hi! I'm DaikiboBot. How can I help you today?")
+    
+    while True:
+        user_input = input("You: ").lower().strip()
+
+        # Exit condition
+        if user_input in ['exit', 'quit', 'bye']:
+            print("DaikiboBot: Goodbye! Have a great day.")
+            break
+
+        # Greetings
+        elif any(greet in user_input for greet in ['hello', 'hi', 'hey']):
+            print("DaikiboBot: Hello! How can I assist you today?")
+        
+        # Company name
+        elif "daikibo" in user_input:
+            print("DaikiboBot: Daikibo Industrials is a global leader in heavy machinery manufacturing.")
+
+        # Help with data
+        elif "data" in user_input or "telemetry" in user_input:
+            print("DaikiboBot: Are you asking about factory telemetry or data analysis?")
+        
+        # Factories
+        elif "factory" in user_input:
+            print("DaikiboBot: We have factories in Tokyo, Osaka, Berlin, and Shenzhen.")
+
+        # Machine issue
+        elif "broken" in user_input or "problem" in user_input or "unhealthy" in user_input:
+            print("DaikiboBot: I'm sorry to hear that. Can you tell me the factory and device type involved?")
+        
+        # Default fallback
+        else:
+            print("DaikiboBot: I'm not sure I understand. Could you please rephrase your question?")
+
+# Run the chatbot
+chatbot()
